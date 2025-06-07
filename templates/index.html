@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multi-Agent Demo</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .panel {
+            flex: 1;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form method="get">
+        City: <input name="city" value="{{ city }}">
+        <input type="submit" value="Update">
+    </form>
+    <div class="container">
+        <div class="panel" id="weather">
+            <h2>Weather</h2>
+            <p>{{ weather }}</p>
+        </div>
+        <div class="panel" id="travel">
+            <h2>Travel Suggestions</h2>
+            <ul>
+                {% for suggestion in suggestions %}
+                <li>{{ suggestion }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="panel" id="news">
+            <h2>News</h2>
+            <ul>
+                {% for item in news %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
